@@ -6,14 +6,10 @@ class Test extends Component {
         super(props);
     
         this.state = { posts : [] };
-        this.state ={isOpened:false};
+        
       }
 
-    click() {
-        console.log(this.state.posts[0].name);
-
-
-    }
+   
     componentDidMount() {
     fetch('http://dev.frevend.com/json/users.json')
     .then(function(response){
@@ -33,13 +29,20 @@ class Test extends Component {
   
 } 
 
-    render() {
-        return(
-            <div onClick={this.click.bind(this)}>
-                test message
+render() {
+    return(
+        <div >
+           {this.state.posts.map((key)=>{
+                return <div key={key.id}>
+                     <p>{key.name}</p>
+                     <p>{key.surname}</p>
+                     <p>{key.desc}</p>
+                </div>
+            })}
+            
 
-            </div>
-        );
-    }
+        </div>
+    );
+}
 }
 export default Test;
