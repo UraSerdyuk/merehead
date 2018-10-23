@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.16.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-js-pagination": "^3.0.2",
@@ -20,6 +21,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy": "http://localhost:9988/",
   "browserslist": [
     ">0.2%",
     "not dead",
